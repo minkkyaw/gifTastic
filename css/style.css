@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1rem;
+    color: #666;
+}
+
+.btn {
+    font-size: inherit;
+    font-style: inherit;
+    color: inherit;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 20px 10px;
+    transition-property: transform, background-color;
+    transition-duration: .5s;
+}
+
+.btn:hover {
+    background-color: rgb(183, 238, 255);
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(245, 159, 159, 0.5);
+    transform: scale(1.2);
+}
+
+.submit-btn {
+    font-size: inherit;
+    font-style: inherit;
+    color: inherit;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 20px 10px;
+    transition-property: transform, background-color;
+    transition-duration: .5s;
+}
+
+.submit-btn:hover {
+    background-color: rgb(183, 238, 255);
+}
+
+.submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(245, 159, 159, 0.5);
+    transform: scale(1.2);
+}
+
+.display-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-group {
+    width: 30%;
+    padding: 20px 10px 20px 20px;
+}
+
+.form-input {
+    width: 60%;
+    font-size: inherit;
+    font-style: inherit;
+    color: inherit;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 20px;
+    transition-property: transform;
+    transition-duration: 1s;
+    border:none;
+    border: 1px solid red;
+}
+
+.form-input:focus {
+    
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(245, 159, 159, 0.5);
+}
+
+.gifs-wrapper {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px 20px;
+    grid-template-rows: repeat(5, 270px);
+    padding: 20px 10px 20px 20px;
+}
+
+.gif-wrapper {
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(241, 241, 241);
+    box-shadow: 0 0 2px 0 rgba(129, 129, 129, 0.5);
+    padding: 15px;
+}
+
+.gif-animation {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 0px auto;
+}
+
+@media screen and (max-width: 1280px) {
+    body {
+        font-size: 1rem;
+        color: #666;
+    }
+    
+    .display-flex {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .form-group {
+        width: 100%;
+        padding: 20px 10px 20px 20px;
+    }
+    
+    .gifs-wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px 20px;
+        grid-template-rows: repeat(5, 250px);
+        padding: 20px 10px 20px 20px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    body {
+        font-size: 1rem;
+        color: #666;
+    }
+    
+    .display-flex {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .form-group {
+        width: 100%;
+        padding: 20px 10px 20px 20px;
+    }
+    
+    .gifs-wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px 20px;
+        grid-template-rows: repeat(5, 250px);
+        padding: 20px 10px 20px 20px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    body {
+        font-size: 1rem;
+        color: #666;
+    }
+    
+    .display-flex {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .form-group {
+        width: 100%;
+        padding: 20px 10px 20px 20px;
+    }
+    
+    .gifs-wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px 20px;
+        grid-template-rows: repeat(10, 250px);
+        padding: 20px 10px 20px 20px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        font-size: 1rem;
+        color: #666;
+    }
+    
+    .display-flex {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .form-group {
+        width: 100%;
+        padding: 20px 10px 20px 20px;
+    }
+    
+    .gifs-wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px 0px;
+        grid-template-rows: repeat(10, 250px);
+        padding: 20px 0;
+    }
+
+    .gif-wrapper {
+        border-radius: 0;
+        padding: 10px;
+    }
+}
