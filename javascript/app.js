@@ -5,56 +5,65 @@ $(document).ready(function() {
     let searchArr = ["Taylor Swift", "Titanic", "007"];
     let gifData = [];
     let limitInput = 10;
+    let count = 0;
 
-    function showBtns(i) {
-        let newBtn = $('<button>').text(searchArr[i]).addClass('btn');
+
+    function showBtn(input) {
+        let newBtn = $('<button>').text(input).addClass('btn');
         newBtn.addClass('search-input');
         $('#btn-group').append(newBtn);
     }
 
-    function getData(response , i) {
-        let dataForGif = [];
+    function Data(item, json, dataForGif, i) {
         for(let j = 0; j < limitInput; j++) {
-            let {rating, images} = response.data[j];
+            let {rating, images} = json.data[j];
             let newGif = {
                 rating,
-                still: response.data[j].images.fixed_height_still.url,
+                still: images.fixed_height_still.url,
                 animation: images.fixed_height.url
             }
             dataForGif.push(Object.assign({} ,newGif));
         };
         gifData.push({});
-        gifData[i][searchArr[i]] = dataForGif;
-        console.log(gifData);
+        gifData[count][item] = dataForGif;
     }
 
-    function displayBtns() {
-        for(let i = 0; i < searchArr.length; i++) {
-            let searchPara = searchArr[i];
-            
+    async function getData(arr) {
+        
+        for(let i = count; i < arr.length; i++) {
+            let dataForGif = [];
+            let searchPara = arr[i];
             let queryUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchPara}&limit=${limitInput}&offset=0&rating=&lang=en`;
-            $.ajax({
-                url: queryUrl,
-                method: 'GET'
-            }).then(response => {
-                getData(response , i)
-                showBtns(i);
-            })
+
+            let response = await fetch(queryUrl);
+            let json = await response.json();
+            await Data(arr[i], json, dataForGif, i);
+            count ++;
+        }   
+        console.log(gifData);
+    }
+    
+    function displayBtns() {
+        getData(searchArr);
+        for(let i = 0; i < searchArr.length; i++) {
+            showBtn(searchArr[i]);  
         };
     };
-
     displayBtns();
 
     $('#submit-btn').on('click', function(event) {
         event.preventDefault();
+        console.log(count);
         this.blur();
+        console.log(gifData);
         if($('#add-item').val().trim() === '') {
             alert("Enter something!!!");
         } else {
-            searchArr.push($('#add-item').val().trim());
-            $('#btn-group').empty();
-            displayBtns();
+            let input = $('#add-item').val().trim();
+            searchArr.push(input);
+            showBtn(input);
             $('#add-item').val('');
+            getData(searchArr);
         };
     });
 

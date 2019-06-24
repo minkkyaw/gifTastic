@@ -14,7 +14,7 @@
     <title>Gif Tastic</title>
 </head>
 <body>
-    <div id="btn-group"></div>
+    <div id="btn-group" class="btn-group"></div>
     <div class="display-flex">
         <div id="gif-group" class="gifs-wrapper"></div>
         <div id="input" class="form-group">
@@ -128,42 +128,7 @@
         // doMath(3);
         // doMath(4);
         // doMath(5);
-        // let searchArr = ["Taylor Swift", "Titanic", "007"];
-        // let apiKey = "mmLCz3wmdx1TnPjdeGHcmM5bz5ysjz2w";
-        // let gifData = [];
-        // let limitInput = 10;
-        // function getData(response , i) {
-        //     let dataForGif = [];
-        //     for(let j = 0; j < limitInput; j++) {
-        //         let {rating, images} = response.data[j];
-        //         let newGif = {
-        //             rating,
-        //             still: images.fixed_height_still.url,
-        //             animation: images.fixed_height.url
-        //         }
-        //     dataForGif.push(Object.assign({} ,newGif));
-        //     };
-        //     gifData.push({});
-        //     gifData[i][searchArr[i]] = dataForGif;
-        //     console.log(gifData);
-        // }
         
-        // async function displayBtns() {
-        //     for(let i = 0; i < searchArr.length; i++) {
-        //         let searchPara = searchArr[i];
-        //         let queryUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchPara}&limit=${limitInput}&offset=0&rating=&lang=en`;
-
-        //         let response = await fetch(queryUrl);
-        //         let json = await response.json();
-        //         getData(json, i);
-
-        //         // fetch(queryUrl)
-        //         //     .then(response => response.json())
-        //         //     .then(json => getData(json, i))
-        //         //     .catch(error => console.log(error));   
-        //     };
-        // };
-        // displayBtns();
         // async function delayES8(time) {
         //     await function () {
         //         setTimout(() => conosle.log(1), 1000);

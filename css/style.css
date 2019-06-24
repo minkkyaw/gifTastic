@@ -9,6 +9,10 @@ body {
     color: #666;
 }
 
+.btn-group {
+    background-color: rgba(198, 242, 255, 0.5);
+}
+
 .btn {
     font-size: inherit;
     font-style: inherit;
@@ -38,7 +42,7 @@ body {
     background-color: #fff;
     border-radius: 5px;
     padding: 5px 10px;
-    margin: 20px 10px;
+    margin: 0px 10px;
     transition-property: transform, background-color;
     transition-duration: .5s;
 }
@@ -60,7 +64,12 @@ body {
 
 .form-group {
     width: 30%;
-    padding: 20px 10px 20px 20px;
+    padding: 20px;
+    background-color: rgb(253, 219, 219);
+    height: fit-content;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 0 rgba(129, 129, 129, 0.5);
 }
 
 .form-input {
@@ -75,7 +84,7 @@ body {
     transition-property: transform;
     transition-duration: 1s;
     border:none;
-    border: 1px solid red;
+    border: 1px solid rgb(165, 165, 165);
 }
 
 .form-input:focus {
@@ -89,8 +98,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px 20px;
-    grid-template-rows: repeat(5, 270px);
-    padding: 20px 10px 20px 20px;
+    grid-template-rows: repeat(4, 270px);
+    padding: 20px;
 }
 
 .gif-wrapper {
@@ -99,6 +108,11 @@ body {
     background-color: rgb(241, 241, 241);
     box-shadow: 0 0 2px 0 rgba(129, 129, 129, 0.5);
     padding: 15px;
+}
+
+.gif-wrapper p {
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 .gif-animation {
@@ -121,7 +135,9 @@ body {
     
     .form-group {
         width: 100%;
-        padding: 20px 10px 20px 20px;
+        padding: 20px;
+        margin: 0;
+        border-radius: 0px;
     }
     
     .gifs-wrapper {
@@ -129,8 +145,8 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px 20px;
-        grid-template-rows: repeat(5, 250px);
-        padding: 20px 10px 20px 20px;
+        grid-template-rows: repeat(4, 250px);
+        padding: 20px 10px 20px 10px;
     }
 }
 
@@ -147,7 +163,9 @@ body {
     
     .form-group {
         width: 100%;
-        padding: 20px 10px 20px 20px;
+        padding: 20px;
+        margin: 0;
+        border-radius: 0px;
     }
     
     .gifs-wrapper {
@@ -156,7 +174,7 @@ body {
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px 20px;
         grid-template-rows: repeat(5, 250px);
-        padding: 20px 10px 20px 20px;
+        padding: 20px;
     }
 }
 
@@ -173,7 +191,9 @@ body {
     
     .form-group {
         width: 100%;
-        padding: 20px 10px 20px 20px;
+        padding: 20px;
+        margin: 0;
+        border-radius: 0px;
     }
     
     .gifs-wrapper {
@@ -182,7 +202,7 @@ body {
         grid-template-columns: 1fr;
         grid-gap: 20px 20px;
         grid-template-rows: repeat(10, 250px);
-        padding: 20px 10px 20px 20px;
+        padding: 20px;
     }
 }
 
@@ -199,7 +219,9 @@ body {
     
     .form-group {
         width: 100%;
-        padding: 20px 10px 20px 20px;
+        padding: 20px;
+        margin: 0;
+        border-radius: 0px;
     }
     
     .gifs-wrapper {
