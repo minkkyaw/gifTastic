@@ -16,7 +16,7 @@
 <body>
     <div id="btn-group" class="btn-group"></div>
     <div class="display-flex">
-        <div id="gif-group" class="gifs-wrapper"></div>
+        <div id="gif-group" class="initial-width"></div>
         <div id="input" class="form-group">
             <label for="adding">Add an item</label>
             <br>
@@ -27,118 +27,6 @@
         </div>
     </div>
     <script src="javascript/app.js">
-    // <script>
-        // var number = 3;
-        // function addNumber(num, cb) {
-        //     var error;
-        //     var result;
-        //     setTimeout(() => {
-        //         if(num === 3) {
-        //             error = "I don't like 3";
-        //         } else {
-        //             result = num + 2;
-        //         }
-        //         cb(error, result);
-        //     }, 1000);
-        // }
-
-        // function multiplyNumber(num, cb) {
-        //     var error;
-        //     var result;
-        //     setTimeout(() => {
-        //         if(num === 4) {
-        //             error = "I don't like 4";
-        //         } else {
-        //             result = num * 2;
-        //         }
-        //         cb(error, result);
-        //     }, 1000);
-        // }
-
-        // function doMath(num) {
-        //     addNumber(num, (error, result) => {
-        //         if(error) {
-        //             console.log(error);
-        //         } else {
-        //             multiplyNumber(num, (error, result) => {
-        //                 if(error) {
-        //                     console.log(error);
-        //                 } else {
-        //                     console.log(result);
-        //                 }
-        //             })
-        //         }
-        //     });
-        // }
-        // doMath(4);
-        // doMath(3);
-        // doMath(2);
-        // function addNumber(number) {
-        //     var myPromise = new Promise((resolve, reject) => {
-        //         setTimeout(() => {
-        //             if(number === 3) {
-        //                 reject("I don't like 3");
-        //             } else {
-        //                 resolve(number + 2);
-        //             }
-        //         },1000);
-        //     });
-        //     return myPromise;
-        // }
-
-        // function multiplyNumber(number) {
-        //     var myPromise = new Promise((resolve, reject) => {
-        //         setTimeout(() => {
-        //             if(number === 4) {
-        //                 reject("I don't like 4");
-        //             } else {
-        //                 resolve(number * 2);
-        //             }
-        //         },1000);
-        //     });
-        //     return myPromise;
-        // }
-
-        // function divideNumber(number) {
-        //     var myPromise = new Promise((resolve, reject) => {
-        //         setTimeout(() => {
-        //             if(number === 12) {
-        //                 reject("I don't like 12");
-        //             } else {
-        //                 resolve(number / 2);
-        //             }
-        //         },1000);
-        //     });
-        //     return myPromise;
-        // }
-
-        // function doMath(num) {
-        //     addNumber(num)
-        //     .then((result) => {
-        //         return multiplyNumber(result)
-        //     })
-        //     .then((result) => {
-        //         return divideNumber(result)
-        //     })
-        //     .then((result) => console.log(result))
-        //     .catch((error) => console.log(error));
-        // }
-
-        // doMath(2);
-        // doMath(3);
-        // doMath(4);
-        // doMath(5);
-        
-        // async function delayES8(time) {
-        //     await function () {
-        //         setTimout(() => conosle.log(1), 1000);
-        //     };
-        //     return 1;
-        // }
-
-        // delayES8(1000)
-        //     .then(() => document.write('hello'))
-        //     .catch(err => console.error(err));
     </script>
 </body>
 </html>

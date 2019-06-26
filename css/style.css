@@ -93,8 +93,11 @@ body {
     box-shadow: 0 0 0 3px rgba(245, 159, 159, 0.5);
 }
 
-.gifs-wrapper {
+.initial-width {
     width: 70%;
+}
+
+.gifs-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px 20px;
@@ -139,9 +142,12 @@ body {
         margin: 0;
         border-radius: 0px;
     }
+
+    .initial-width {
+        width: 100%;
+    }
     
     .gifs-wrapper {
-        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px 20px;
@@ -167,9 +173,12 @@ body {
         margin: 0;
         border-radius: 0px;
     }
+
+    .initial-width {
+        width: 100%;
+    }
     
     .gifs-wrapper {
-        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px 20px;
@@ -195,9 +204,12 @@ body {
         margin: 0;
         border-radius: 0px;
     }
+
+    .initial-width {
+        width: 100%;
+    }
     
     .gifs-wrapper {
-        width: 100%;
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 20px 20px;

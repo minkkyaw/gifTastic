@@ -68,6 +68,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.search-input', function() {
         $('#gif-group').empty();
+        $('#gif-group').addClass('gifs-wrapper');
         this.blur();
         let searchPara = $(this).text();
         let index = searchArr.indexOf(searchPara);
