@@ -29,7 +29,6 @@ $(document).ready(function() {
     }
 
     async function getData(arr) {
-        
         for(let i = count; i < arr.length; i++) {
             let dataForGif = [];
             let searchPara = arr[i];
@@ -60,8 +59,8 @@ $(document).ready(function() {
             alert("Enter something!!!");
         } else {
             let input = $('#add-item').val().trim();
-            searchArr.push(input);
-            showBtn(input);
+            searchArr.push(input.replace(/(^|\s)\S/g, x => x.toUpperCase()));
+            showBtn(input.replace(/(^|\s)\S/g, x => x.toUpperCase()));
             $('#add-item').val('');
             getData(searchArr);
         };
