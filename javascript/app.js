@@ -58,7 +58,7 @@ $(document).ready(function() {
         if($('#add-item').val().trim() === '') {
             alert("Enter something!!!");
         } else {
-            let input = $('#add-item').val().trim();
+            let input = $('#add-item').val().trim().toLowerCase();
             searchArr.push(input.replace(/(^|\s)\S/g, x => x.toUpperCase()));
             showBtn(input.replace(/(^|\s)\S/g, x => x.toUpperCase()));
             $('#add-item').val('');
