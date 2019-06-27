@@ -11,6 +11,7 @@ body {
 
 .btn-group {
     background-color: rgba(198, 242, 255, 0.5);
+    padding: 20px;
 }
 
 .btn {
@@ -20,7 +21,7 @@ body {
     background-color: #fff;
     border-radius: 5px;
     padding: 5px 10px;
-    margin: 20px 10px;
+    margin: 0 10px 10px;
     transition-property: transform, background-color;
     transition-duration: .5s;
 }
@@ -42,7 +43,7 @@ body {
     background-color: #fff;
     border-radius: 5px;
     padding: 5px 10px;
-    margin: 0px 10px;
+    margin: 0;
     transition-property: transform, background-color;
     transition-duration: .5s;
 }
@@ -52,6 +53,29 @@ body {
 }
 
 .submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(245, 159, 159, 0.5);
+    transform: scale(1.2);
+}
+
+.favorite-btn {
+    font-size: inherit;
+    font-style: inherit;
+    color: rgb(171, 191, 207);
+    background-color: rgb(255, 58, 58);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 20px 30px;
+    transition-property: transform, background-color;
+    transition-duration: .5s;
+}
+
+.favorite-btn:hover {
+    color: inherit;
+    background-color: rgb(183, 238, 255);
+}
+
+.favorite-btn:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(245, 159, 159, 0.5);
     transform: scale(1.2);
@@ -99,9 +123,9 @@ body {
 
 .gifs-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px 20px;
-    grid-template-rows: repeat(4, 270px);
+    grid-template-rows: repeat(4, 290px);
     padding: 20px;
 }
 
@@ -125,6 +149,13 @@ body {
     margin: 0px auto;
 }
 
+.favorite-gif-animation {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 0px auto;
+}
+
 @media screen and (max-width: 1280px) {
     body {
         font-size: 1rem;
@@ -138,7 +169,7 @@ body {
     
     .form-group {
         width: 100%;
-        padding: 20px;
+        padding: 10px 30px;
         margin: 0;
         border-radius: 0px;
     }
@@ -148,10 +179,11 @@ body {
     }
     
     .gifs-wrapper {
+        width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 20px 20px;
-        grid-template-rows: repeat(4, 250px);
+        grid-template-rows: repeat(4, 290px);
         padding: 20px 10px 20px 10px;
     }
 }
@@ -169,7 +201,7 @@ body {
     
     .form-group {
         width: 100%;
-        padding: 20px;
+        padding: 10px 30px;
         margin: 0;
         border-radius: 0px;
     }
@@ -180,9 +212,9 @@ body {
     
     .gifs-wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 20px 20px;
-        grid-template-rows: repeat(5, 250px);
+        grid-template-rows: repeat(5, 290px);
         padding: 20px;
     }
 }
@@ -197,13 +229,36 @@ body {
         display: flex;
         flex-direction: column-reverse;
     }
+
+    .btn-group {
+        padding: 10px;
+    }
+    
+    .btn {
+        padding: 5px 10px;
+        margin: 10px 10px 10px;
+        transition-property: transform, background-color;
+        transition-duration: .5s;
+    }
+
+    .favorite-btn {
+        padding: 5px 10px;
+        margin: 10px 30px;
+    }
     
     .form-group {
         width: 100%;
-        padding: 20px;
+        padding: 10px 30px;
         margin: 0;
         border-radius: 0px;
     }
+    
+    .form-input {
+        margin: 10px 10px;
+        padding: 5px;
+    }
+    
+    
 
     .initial-width {
         width: 100%;
@@ -211,10 +266,10 @@ body {
     
     .gifs-wrapper {
         display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 20px 20px;
-        grid-template-rows: repeat(10, 250px);
-        padding: 20px;
+        grid-template-columns: 100%;
+        grid-gap: 10px 10px;
+        grid-template-rows: repeat(10, 290px);
+        padding: 10px;
     }
 }
 
@@ -228,21 +283,41 @@ body {
         display: flex;
         flex-direction: column-reverse;
     }
+
+    .btn-group {
+        padding: 10px;
+    }
+    
+    .btn {
+        padding: 5px 10px;
+        margin: 10px 10px 10px;
+        transition-property: transform, background-color;
+        transition-duration: .5s;
+    }
+
+    .favorite-btn {
+        padding: 5px 10px;
+        margin: 10px 30px;
+    }
     
     .form-group {
         width: 100%;
-        padding: 20px;
+        padding: 10px 30px;
         margin: 0;
         border-radius: 0px;
+    }
+    
+    .form-input {
+        margin: 10px 10px;
+        padding: 5px;
     }
     
     .gifs-wrapper {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 20px 0px;
-        grid-template-rows: repeat(10, 250px);
-        padding: 20px 0;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(10, 290px);
+        padding: 10px 0;
     }
 
     .gif-wrapper {

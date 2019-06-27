@@ -6,6 +6,7 @@ $(document).ready(function() {
     let gifData = [];
     let limitInput = 10;
     let count = 0;
+    let favoriteArr = [];
 
 
     function showBtn(input) {
@@ -14,10 +15,11 @@ $(document).ready(function() {
         $('#btn-group').append(newBtn);
     }
 
-    function Data(item, json, dataForGif, i) {
+    function Data(item, json, dataForGif) {
         for(let j = 0; j < limitInput; j++) {
             let {rating, images} = json.data[j];
             let newGif = {
+                name: item,
                 rating,
                 still: images.fixed_height_still.url,
                 animation: images.fixed_height.url
@@ -36,7 +38,7 @@ $(document).ready(function() {
 
             let response = await fetch(queryUrl);
             let json = await response.json();
-            await Data(arr[i], json, dataForGif, i);
+            await Data(arr[i], json, dataForGif);
             count ++;
         }   
         console.log(gifData);
@@ -52,17 +54,35 @@ $(document).ready(function() {
 
     $('#submit-btn').on('click', function(event) {
         event.preventDefault();
-        console.log(count);
         this.blur();
-        console.log(gifData);
-        if($('#add-item').val().trim() === '') {
+        let input = $('#add-item').val().trim().toLowerCase().replace(/(^|\s)\S/g, x => x.toUpperCase());
+        if(input === '') {
+            $('#add-item').val('');
             alert("Enter something!!!");
+        } else if(searchArr.includes(input)) {
+            $('#add-item').val('');
+            alert("Enter another!!");
         } else {
-            let input = $('#add-item').val().trim().toLowerCase();
-            searchArr.push(input.replace(/(^|\s)\S/g, x => x.toUpperCase()));
-            showBtn(input.replace(/(^|\s)\S/g, x => x.toUpperCase()));
+            
+            searchArr.push(input);
+            showBtn(input);
             $('#add-item').val('');
             getData(searchArr);
+        };
+    });
+
+    $('#favorite-btn').on('click', function(event) {
+        $('#gif-group').empty();
+        $('#gif-group').addClass('gifs-wrapper');
+        this.blur();
+        for(let i = 0; i < favoriteArr.length; i++) {
+            let data = favoriteArr[i];
+            let name = data.name;
+            let rating =  data.rating;
+            let newP = $('<p>').text("Rating : " + rating);
+            let newImg = $('<img>').attr('src', data.still).attr('data-id', i).attr('data-animation', 'still').addClass('favorite-gif-animation').attr('data-name', name);
+            let newDiv = $('<div>').append($('<p>').text(name)).append(newP).append(newImg).addClass('gif-wrapper');
+            newDiv.appendTo($('#gif-group'));
         };
     });
 
@@ -75,15 +95,16 @@ $(document).ready(function() {
         for(let i = 0; i < limitInput; i++) {
             let data = gifData[index][searchPara][i];
             let rating =  data.rating;
+            let name = data.name;
             let newP = $('<p>').text("Rating : " + rating);
-            let newImg = $('<img>').attr('src', data.still).attr('data-id', i).attr('data-animation', 'still').addClass('gif-animation').attr('data-name', searchPara);
-            let newDiv = $('<div>').append(newP).append(newImg).addClass('gif-wrapper');
+            let newImg = $('<img>').attr('src', data.still).attr('data-id', i).attr('data-animation', 'still').addClass('gif-animation').attr('data-name', name);
+            let newDiv = $('<div>').append($('<p>').text(name)).append(newP).append(newImg).addClass('gif-wrapper');
             newDiv.appendTo($('#gif-group'));
         };
         
     });
+    
     $(document).on('click', '.gif-animation', function() {
-        this.blur()
         let index = parseInt($(this).attr('data-id'));
         let name = $(this).attr('data-name');
         let clickGifAnimation = gifData[searchArr.indexOf(name)][name];
@@ -94,5 +115,29 @@ $(document).ready(function() {
             $(this).attr('src', clickGifAnimation[index].still);
             $(this).attr('data-animation', 'still');
         };
+    });
+
+    $(document).on('click', '.favorite-gif-animation', function() {
+        let index = parseInt($(this).attr('data-id'));
+        let name = $(this).attr('data-name');
+        let clickGifAnimation = gifData[searchArr.indexOf(name)][name];
+        if($(this).attr('data-animation') === 'still') {
+            $(this).attr('src', favoriteArr[index].animation);
+            $(this).attr('data-animation','animation');
+        } else{
+            $(this).attr('src', favoriteArr[index].still);
+            $(this).attr('data-animation', 'still');
+        };
+    });
+
+    $(document).on('dblclick', '.gif-animation', function() {
+        this.blur();
+        let name = $(this).attr('data-name');
+        let index = searchArr.indexOf(name);
+        let id = $(this).attr('data-id');
+        favoriteArr.push(gifData[index][name][id]);
+        if(favoriteArr.length > 10) {
+            favoriteArr.shift();
+        }
     });
 });
