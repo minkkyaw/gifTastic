@@ -1,1 +1,1 @@
-visit at [gifTastic]https://minkkyaw.github.io/gifTastic/
+visit at [gifTastic](https://minkkyaw.github.io/gifTastic/)
